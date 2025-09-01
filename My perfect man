@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love 💙</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      overflow: hidden;
+      color: white;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      opacity: 0;
+      animation: fadeIn 2s forwards 2s;
+    }
+
+    .glow {
+      color: #ffd700;
+      text-shadow: 0 0 10px #ffd700, 0 0 20px #ffae00, 0 0 40px #ff9900;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      from { transform: translateY(-100px); opacity: 1; }
+      to { transform: translateY(110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="glow">You're the Best Boyfriend Ever 💕</h1>
+  <p>And I’m so proud of you 😘💙</p>
+
+  <script>
+    function createStar() {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.left = Math.random() * window.innerWidth + "px";
+      star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 5000);
+    }
+    setInterval(createStar, 100);
+  </script>
+</body>
+</html>
